@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest --watch",
     "start": "webpack-cli serve",
+    "buildprod": "webpack --mode production",
     "build": "webpack"
   },
   "keywords": [],
