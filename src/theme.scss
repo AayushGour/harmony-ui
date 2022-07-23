@@ -1,0 +1,253 @@
+// Themes
+$themes: (light, dark);
+// Light Theme Colors
+$lightThemeBackground: white;
+$lightThemeSidebarBackground: #e8ecef;
+$lightThemeFontColor: black;
+$lightThemeBorder: #acbac5;
+
+// Dark Theme Colors
+$darkThemeBackground: #00151e;
+$darkThemeSidebarBackground: #002d40;
+$darkThemeFontColor: white;
+$darkThemeBorder: #0075a6;
+
+// Theme Variables
+$backgroundColor: white;
+$fontColor: black;
+$selectionColor: #01a4e9;
+$activeSelectionColor: #0180b6;
+$errorRed: #c02;
+$tertiaryColor: #0000ff;
+
+@mixin theme(
+    $themeName,
+    $lightBackground: $lightThemeBackground,
+    $darkBackground: $darkThemeBackground,
+    $lightFont: $lightThemeFontColor,
+    $darkFont: $darkThemeFontColor,
+    $property: "",
+    $propertyDark: "",
+    $propertyLight: ""
+) {
+    @if $themeName == dark {
+        $backgroundColor: $darkBackground !global;
+        $fontColor: $darkFont !global;
+        @if $property != "" {
+            #{$property}: $propertyDark;
+        }
+    } @else if $themeName == light {
+        $backgroundColor: $lightBackground !global;
+        $fontColor: $lightFont !global;
+        @if $property != "" {
+            #{$property}: $propertyLight;
+        }
+    }
+    background-color: $backgroundColor;
+    color: $fontColor;
+    transition: all 0.3s;
+}
+@mixin invert-colors($themeName) {
+    @if $themeName == dark {
+        background-color: $lightThemeBackground !important;
+        color: $lightThemeFontColor !important;
+    } @else if $themeName == light {
+        background-color: $darkThemeBackground !important;
+        color: $darkThemeFontColor !important;
+    }
+}
+@mixin invert-filter($themeName) {
+    @if $themeName == dark {
+        filter: invert(1);
+    } @else if $themeName == light {
+        filter: invert(0);
+    }
+}
+
+@each $theme in $themes {
+    // Body
+    body.#{$theme} {
+        //Message Popup
+        .msg-popup {
+            .ant-message-notice-content {
+                @include theme(
+                    $theme,
+                    $property: border-color,
+                    $propertyLight: $lightThemeSidebarBackground,
+                    $propertyDark: $darkThemeSidebarBackground,
+                    $darkBackground: $darkThemeSidebarBackground,
+                    $lightBackground: $lightThemeBackground
+                );
+            }
+        }
+    }
+    .site-main-layout {
+        & * {
+            color: inherit;
+            background-color: transparent;
+        }
+        &.#{$theme} {
+            div {
+                @include theme($theme);
+            }
+
+            // Left Sidebar
+            #left-sidebar {
+                @include theme(
+                    $theme,
+                    $lightBackground: $lightThemeSidebarBackground,
+                    $darkBackground: $darkThemeSidebarBackground
+                );
+
+                .logo-container {
+                    .logo {
+                        @include invert-filter($theme);
+                        .logo-H {
+                            transition: all 0.3s;
+                            @if $theme == dark {
+                                stroke: #fe5b16;
+                            } @else if $theme == light {
+                                stroke: $selectionColor;
+                            }
+                        }
+                    }
+                    .logo-title {
+                        @include theme($theme);
+                    }
+                }
+                .nav-list-container {
+                    .nav-list-item {
+                        @include theme($theme, $lightFont: $lightThemeFontColor, $darkFont: $darkThemeFontColor);
+                    }
+                }
+                .sidebar-divider {
+                    @include invert-colors($theme);
+                }
+            }
+            //Header
+            .search-panel-container {
+                @include theme(
+                    $theme,
+                    $property: border-color,
+                    $propertyDark: $darkThemeBorder,
+                    $propertyLight: $lightThemeBorder
+                );
+            }
+            //YT Item List
+            .yt-list-container {
+                @include theme(
+                    $theme,
+                    $lightBackground: $lightThemeBackground,
+                    $darkBackground: $darkThemeSidebarBackground
+                );
+                .yt-list-item {
+                    // @include theme($theme);
+                    @include theme(
+                        $theme,
+                        $lightBackground: $lightThemeSidebarBackground,
+                        $darkBackground: $darkThemeBackground
+                    );
+                    .item-title-container {
+                        .author-name {
+                            @include theme($theme, $property: opacity, $propertyDark: 0.7, $propertyLight: 0.8);
+                        }
+                    }
+                    &.sortable-chosen,
+                    &:hover {
+                        @include theme(
+                            $theme,
+                            $property: box-shadow,
+                            $propertyDark: 0px 0px 5px #fff8,
+                            $propertyLight: 2px 2px 5px #0008
+                        );
+                        @include theme(
+                            $theme,
+                            $lightBackground: $lightThemeBackground,
+                            $darkBackground: $darkThemeSidebarBackground
+                        );
+                    }
+                }
+            }
+
+            //Search Page
+            .search-page-container {
+                .search-header {
+                    @include theme($theme);
+                }
+            }
+
+            // Card{
+            .card {
+                // @include theme(
+                //     $theme,
+                //     $property: box-shadow,
+                //     $propertyDark: (1px 1px 3px $tertiaryColor, 2px 2px 5px #fff8),
+                //     $propertyLight: (1px 1px 3px $tertiaryColor, 2px 2px 5px #0008)
+                // );
+                @include theme(
+                    $theme,
+                    $lightBackground: $lightThemeBackground,
+                    $darkBackground: $darkThemeSidebarBackground,
+                    $property: border-color,
+                    $propertyDark: transparent,
+                    $propertyLight: $lightThemeBorder
+                );
+            }
+
+            //Loader
+            .loader-container {
+                @include theme($theme, $lightBackground: #00000020, $darkBackground: transparent);
+            }
+            .loader .inner {
+                @include theme(
+                    $theme,
+                    $property: border-color,
+                    $propertyLight: $darkThemeBorder,
+                    $propertyDark: $lightThemeBorder
+                );
+            }
+            //Home Page
+
+            //Carousel
+            .ant-carousel {
+                .slick-dots {
+                    li {
+                        @include theme(
+                            $theme,
+                            $lightBackground: $darkThemeSidebarBackground,
+                            $darkBackground: $lightThemeSidebarBackground
+                        );
+                        button {
+                            background-color: inherit;
+                        }
+                        &.slick-active {
+                            background-color: $selectionColor;
+                        }
+                    }
+                }
+            }
+            // Playlist Page
+            .playlists-page .playlist-list-container .playlist-item {
+                @include theme(
+                    $theme,
+                    $lightBackground: $lightThemeSidebarBackground,
+                    $darkBackground: $darkThemeBackground
+                );
+                &.selected,
+                &:hover {
+                    @include theme(
+                        $theme,
+                        $property: box-shadow,
+                        $propertyDark: 0px 0px 5px #fff8,
+                        $propertyLight: 2px 2px 5px #0008
+                    );
+                    @include theme(
+                        $theme,
+                        $lightBackground: $lightThemeBackground,
+                        $darkBackground: $darkThemeSidebarBackground
+                    );
+                }
+            }
+        }
+    }
+}

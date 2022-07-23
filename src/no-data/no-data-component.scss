@@ -1,0 +1,11 @@
+.no-data-component {
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .ant-empty-image .ant-empty-img-default {
+        filter: invert(0.1);
+    }
+}

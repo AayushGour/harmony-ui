@@ -1,0 +1,34 @@
+@import "../../../theme.scss";
+.site-header {
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .search-panel-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        column-gap: 5px;
+        padding: 5px 10px;
+        border: 1px solid red;
+        border-radius: 30px;
+        opacity: 0.6;
+        margin: 0px 20px;
+        width: 40%;
+        &:focus-within {
+            opacity: 1;
+        }
+        .search {
+            border: none !important;
+            outline: none !important;
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            color: inherit;
+        }
+    }
+}

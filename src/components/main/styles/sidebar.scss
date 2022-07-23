@@ -1,0 +1,99 @@
+@import "../../../theme.scss";
+#left-sidebar {
+    max-width: 200px;
+    min-width: 200px;
+    height: 100%;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    box-shadow: 2px 2px 4px #0007;
+    &.collapsed {
+        max-width: 60px;
+        min-width: 60px;
+        .logo-container {
+            padding: 20px 0px;
+            .logo-title {
+                transition: all 0.3s;
+                font-size: 0.7rem;
+                opacity: 0;
+            }
+        }
+        .nav-list-item {
+            justify-content: center !important;
+            column-gap: 0px !important;
+            .MuiSvgIcon-root {
+                transition: all 0.3s;
+                font-size: 2rem !important;
+            }
+            .nav-list-title {
+                transition: all 0.3s;
+                visibility: hidden;
+                opacity: 0;
+                width: 0px !important;
+            }
+        }
+        .sidebar-divider {
+            width: 60%;
+        }
+    }
+    .logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        column-gap: 5px;
+        padding: 20px;
+        transition: all 0.3s;
+        background-color: transparent;
+        .logo-title {
+            white-space: nowrap;
+            margin: 0px;
+            margin-top: 10px;
+            font-size: 1.2rem;
+            background-color: transparent !important;
+        }
+    }
+    .nav-list-container {
+        list-style-type: none;
+        padding: 0px;
+        width: 100%;
+        background-color: transparent;
+        .nav-list-item {
+            background-color: transparent !important;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 1rem;
+            column-gap: 10px;
+            padding: 8px 0px;
+            margin: 10px 10px;
+            position: relative;
+            color: $fontColor;
+            text-decoration: none !important;
+            overflow: hidden;
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
+            .MuiSvgIcon-root {
+                font-size: 1.5rem;
+            }
+            .nav-list-title {
+                // transition: all 0.3s;
+                white-space: nowrap;
+            }
+            &.selected {
+                color: $selectionColor !important;
+                border-image: linear-gradient(to right, transparent, $selectionColor, transparent);
+                border-image-slice: 1;
+                border-radius: 2px;
+            }
+        }
+    }
+    .sidebar-divider {
+        padding: 0px 5px !important;
+        height: 2px;
+        width: 80%;
+        background-color: grey !important;
+        margin: 20px auto;
+        border-radius: 5px;
+    }
+}

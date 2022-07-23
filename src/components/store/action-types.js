@@ -1,3 +1,5 @@
 // Application level Action Types 
 // Include these action types in reducers and actions 
-// export const TEST_ACTION = "TEST_ACTION" 
+
+export const TOGGLE_SIDEBAR = "TOGGLE_SIDEBAR";
+export const LOGIN_STATUS = "LOGIN_STATUS";

@@ -1,3 +1,6 @@
+import { setLoggedIn } from "../components/store/action";
+import store from "../components/store/store";
+
 const { default: axios } = require("axios");
 
 const BASE_URL = process.env.BASE_URL
@@ -37,7 +40,9 @@ axios.interceptors.response.use((response) => {
         }
         return axios(originalRequest);
     } else if (error?.response?.status === 403 && error?.response?.data === "Logout") {
+        store.dispatch(setLoggedIn(false));
         console.log("Logout")
+        console.error(error);
         return Promise.reject(error);
     } else {
         console.error(error);

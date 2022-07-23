@@ -1,0 +1,68 @@
+@import "./theme.scss";
+// CSS Properties
+.d-flex {
+    display: flex !important;
+}
+.flex-column {
+    flex-direction: column !important;
+}
+.flex-row {
+    flex-direction: row !important;
+}
+.align-items-center {
+    align-items: center !important;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+.flex-1 {
+    flex: 1 !important;
+}
+.w-100 {
+    width: 100% !important;
+}
+.h-100 {
+    height: 100% !important;
+}
+.mb-0 {
+    margin-bottom: 0px !important;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $darkThemeBorder;
+    border-radius: 3px;
+}
+
+// Custom Properties
+.content-container {
+    height: 100%;
+    width: 100%;
+}
+
+.msg-popup {
+    .ant-message-notice-content {
+        border-radius: 50px;
+        border: 2px solid;
+        .ant-message-custom-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            span {
+                font-size: 1rem;
+            }
+            .anticon {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+.card {
+    // background-color: transparent !important;
+    border-radius: 20px;
+    border: 1px solid;
+}

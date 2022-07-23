@@ -1,0 +1,77 @@
+@import "../../theme.scss";
+
+.search-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .search-header {
+        background-color: transparent !important;
+        padding: 5px 0px;
+        margin: 5px 0px 0px 20px;
+        .search-title {
+            color: inherit;
+        }
+    }
+    .search-result-content {
+        display: grid;
+        width: 100%;
+        overflow: hidden;
+        padding: 0px 20px 10px;
+        gap: 20px;
+        grid-template-areas: "search-list channel" "search-list shelf";
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        // height: 100%;
+        .yt-list-card {
+            grid-area: search-list;
+            height: 100%;
+            overflow: hidden;
+            flex: 2 0 40%;
+            padding: 0px !important;
+            .yt-list-container {
+                margin-top: 10px;
+                padding-bottom: 20px;
+            }
+        }
+
+        .card {
+            width: 100%;
+            padding: 20px 0px;
+            overflow: hidden;
+            .card-title {
+                color: inherit;
+                background-color: transparent !important;
+                padding-left: 20px;
+                margin-bottom: 0px;
+            }
+            &.channel-card {
+                grid-area: channel;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                row-gap: 10px;
+                flex: 1 0 45%;
+                * {
+                    color: inherit;
+                    background-color: transparent;
+                }
+                .channel-name {
+                    padding: 0px !important;
+                }
+                .avatar-image {
+                    border-radius: 50%;
+                    height: 200px;
+                    width: 200px;
+                }
+            }
+            &.shelf-card {
+                grid-area: shelf channel;
+                .yt-list-container {
+                    padding-bottom: 20px;
+                }
+            }
+        }
+    }
+}
