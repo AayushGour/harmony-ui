@@ -10,7 +10,9 @@ module.exports = {
         // filename: "bundle.js", 
         // path: "./dist", 
         // assetModuleFilename: "assets/^[hash^]^[ext^]^[query^]", 
-        publicPath: "auto"
+        // publicPath: "auto",
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
     },
     devServer: {
         allowedHosts: "auto",
@@ -22,6 +24,15 @@ module.exports = {
             logging: "info",
         },
         historyApiFallback: true,
+    },
+    // optimization: {
+    //     splitChunks: {
+    //         chunks: 'all',
+    //     },
+    // },
+    performance: {
+        maxAssetSize: 3000000,
+        maxEntrypointSize: 3000000
     },
     // devtool: "eval",
     devtool: false,
