@@ -23,7 +23,8 @@ module.exports = {
         },
         historyApiFallback: true,
     },
-    devtool: "eval",
+    // devtool: "eval",
+    devtool: false,
     module: {
         rules: [
             {

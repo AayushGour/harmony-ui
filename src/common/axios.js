@@ -39,7 +39,7 @@ axios.interceptors.response.use((response) => {
             "Authorization": `Bearer ${freshTokens?.data?.token}`
         }
         return axios(originalRequest);
-    } else if (error?.response?.status === 403 && error?.response?.data === "Logout") {
+    } else if ((error?.response?.status === 403 && error?.response?.data === "Logout") || (error?.response?.status === 401 && error?.response?.data == "Invalid Token")) {
         store.dispatch(setLoggedIn(false));
         console.log("Logout")
         console.error(error);
