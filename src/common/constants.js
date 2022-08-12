@@ -25,7 +25,7 @@ export const sidebarMenuItems = [
     // },
 ]
 export const Logo = (props) => {
-    return <svg style={{ transition: "all 0.3s" }} height="100" width="100" viewBox='-1 -1 49 45' strokeLinecap='round' {...props}>
+    return <svg className={`harmony-logo ${props?.className}`} style={{ transition: "all 0.3s" }} height="100" width="100" viewBox='-1 -1 49 45' strokeLinecap='round' {...props}>
         <path className='logo-waveform' stroke='black' d="M 6 26 L 6 16 M 11 11 L 11 36 M 16 6 L 16 31 M 31 16 L 31 38 M 36 11 L 36 33 M 41 16 L 41 28 M 46 21 L 46 25 M 1 16 L 1 21 M 21 21" />
         <path className='logo-H' stroke="#01a4e9" d="M 21 1 L 21 41 M 26 6 L 26 36 M 21 21 L 26 21" />
     </svg>

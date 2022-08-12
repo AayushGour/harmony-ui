@@ -76,9 +76,9 @@ const Login = (props) => {
                         <Logo height="100px" width="100px" strokeWidth={1.5} />
                         <h3 className='logo-title'>Harmony</h3>
                     </div>
-                    <span>Hi! Welcome to Harmony.</span>
+                    <span className='welcome-message'>Hi! Welcome to Harmony.</span>
                 </div>
-                <div className='right-panel'>
+                <div className={`right-panel ${props?.type}`}>
                     <h3>{props?.type === "login" ? "Login" : "Sign Up"}</h3>
                     {props?.type === "login" ?
                         <form className='form-container login-form' onSubmit={onLogin}>

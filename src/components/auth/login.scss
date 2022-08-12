@@ -123,3 +123,36 @@
         opacity: 1;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .login-card {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        row-gap: 10px;
+        width: 80% !important;
+        .left-panel {
+            width: 100% !important;
+            height: 20% !important;
+            .logo-container {
+                .harmony-logo {
+                    height: 70px;
+                    width: 70px;
+                }
+            }
+            .welcome-message {
+                display: none;
+            }
+        }
+        .right-panel {
+            width: 100% !important;
+            height: 75% !important;
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .login-card {
+        padding: 15px !important;
+    }
+}
