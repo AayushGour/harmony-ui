@@ -65,10 +65,25 @@
                 opacity: 0;
                 overflow: hidden;
                 width: 0px;
+                left: 100%;
                 // display: none;
             }
             &.expanded {
                 flex: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .playlists-page {
+        position: relative;
+        .panel {
+            width: 100%;
+            &.right-panel {
+                position: absolute;
+                width: 97%;
+                right: 9px;
             }
         }
     }

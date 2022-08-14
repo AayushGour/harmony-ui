@@ -1,5 +1,6 @@
 import React from 'react';
-import { Whatshot, PlaylistPlay } from "@mui/icons-material";
+import { DarkMode, LightMode, PlaylistPlay } from "@mui/icons-material";
+import { store } from "../components/store/store";
 export const sidebarMenuItems = [
     // {
     //     id: 1,
@@ -11,7 +12,8 @@ export const sidebarMenuItems = [
         id: 2,
         title: "Playlists",
         icon: <PlaylistPlay />,
-        route: "/playlists"
+        route: "/playlists",
+        type: "nav-link"
     },
     // {
     //     id: 3,
@@ -23,6 +25,15 @@ export const sidebarMenuItems = [
     //     icon: <PlaylistPlay />,
     //     route: "/my-playlists"
     // },
+]
+export const sidebarBottomMenuItems = [
+    {
+        id: "b-1",
+        title: "Theme",
+        type: "switch",
+        offIcon: <LightMode />,
+        onIcon: <DarkMode />
+    }
 ]
 export const Logo = (props) => {
     return <svg className={`harmony-logo ${props?.className}`} style={{ transition: "all 0.3s" }} height="100" width="100" viewBox='-1 -1 49 45' strokeLinecap='round' {...props}>

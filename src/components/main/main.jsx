@@ -48,7 +48,7 @@ const Main = (props) => {
     return (
         <div className={`site-main-layout flex-column ${theme}`} >
             <div className='main-layout d-flex flex-row flex-1 w-100'>
-                <Sidebar />
+                <Sidebar toggleTheme={toggleTheme} theme={theme} />
                 <div className='content-layout h-100'>
                     <Header toggleTheme={() => toggleTheme()} isDarkTheme={theme} />
                     <div className='site-content h-100'>

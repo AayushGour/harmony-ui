@@ -1,4 +1,4 @@
-import { Logout, Search } from '@mui/icons-material';
+import { Logout, MenuOutlined, Search } from '@mui/icons-material';
 import { Autocomplete, message } from 'antd';
 import axios from 'axios';
 import React from 'react';
@@ -21,9 +21,15 @@ const Header = (props) => {
             message.warning({ content: "Enter Search Text", className: "msg-popup" })
         }
     }
+    useEffect(() => {
+        document.body?.clientWidth > 768 ? props.toggleSidebar(false) : props.toggleSidebar(true)
+    }, [])
 
     return (
         <div className="site-header">
+            <span id="header-menu-btn" className='menu-btn' onClick={() => { props.toggleSidebar(!props.isSidebarCollapsed) }}>
+                <MenuOutlined />
+            </span>
             <form className='search-panel-container' onSubmit={(e) => { e.preventDefault(); onSearch(); }}>
                 <Search />
                 <input
@@ -33,10 +39,6 @@ const Header = (props) => {
                     placeholder="Search for a song, artist, etc."
                 />
             </form>
-            <button onClick={() => { props.toggleSidebar(!props.isSidebarCollapsed) }}>
-                collapse
-            </button>
-            <button onClick={() => { props.toggleTheme(); }} >{props.isDarkTheme === "light" ? "Light" : "Dark"}</button>
             <span>{userName}</span>
             <button onClick={() => { props.setLoggedIn(false) }}><Logout /> </button>
         </div>
