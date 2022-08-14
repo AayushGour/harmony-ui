@@ -4,7 +4,7 @@ import { LOGIN_STATUS, TOGGLE_SIDEBAR } from "./action-types";
 
 // Initial Application state 
 const initialState = {
-    isSidebarCollapsed: false,
+    isSidebarCollapsed: true,
     isLoggedIn: localStorage.getItem("isAuthorized")
 }
 // Reducer to change state based on the action 

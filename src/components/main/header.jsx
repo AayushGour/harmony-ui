@@ -39,8 +39,10 @@ const Header = (props) => {
                     placeholder="Search for a song, artist, etc."
                 />
             </form>
-            <span>{userName}</span>
-            <button onClick={() => { props.setLoggedIn(false) }}><Logout /> </button>
+            <div className="user-detail-container">
+                <span>{userName}</span>
+                <button onClick={() => { props.setLoggedIn(false) }}><Logout /> </button>
+            </div>
         </div>
     )
 }

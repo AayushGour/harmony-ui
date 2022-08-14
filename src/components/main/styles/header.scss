@@ -49,3 +49,11 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .site-header {
+        .search-panel-container {
+            flex: 1;
+        }
+    }
+}

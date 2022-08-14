@@ -1,4 +1,28 @@
+@import "../../../theme.scss";
 .footer {
-    height: 60px !important;
     width: 100%;
+    transition: height 0.3s !important;
+    -webkit-transition: height 0.3s !important;
+    border-top: 1px solid $darkThemeBorder;
+    .toggle-footer {
+        position: absolute;
+        right: 0;
+        top: 0;
+        .MuiSvgIcon-root {
+            font-size: 2rem;
+        }
+    }
+    &.closed {
+        position: relative;
+        height: 60px !important;
+    }
+    &.open {
+        position: fixed;
+        height: 100vh !important;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        // top: 0px;
+        transform-origin: 100% 50%;
+    }
 }
