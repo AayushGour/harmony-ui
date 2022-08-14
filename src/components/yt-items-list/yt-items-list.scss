@@ -150,10 +150,48 @@
                 .add-btn {
                     font-size: 1rem;
                 }
+                .play-btn {
+                    display: none;
+                }
             }
             .thumbnail-container {
                 min-width: 120px;
                 max-width: 120px;
+                max-height: 60px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 475px) {
+    .yt-list-container {
+        .yt-list-item {
+            .list-item-content {
+                column-gap: 5px;
+            }
+            .drag-indicator {
+                font-size: 1.3rem;
+            }
+            .item-title-container {
+                max-width: 50%;
+            }
+            .item-title-container .title,
+            .btn-container .item-duration {
+                font-size: 0.9rem;
+            }
+            .item-title-container .author-name {
+                font-size: 0.7rem;
+            }
+            .btn-container {
+                .add-btn {
+                    font-size: 1rem;
+                }
+                .play-btn {
+                    display: none;
+                }
+            }
+            .thumbnail-container {
+                min-width: 90px;
+                max-width: 90px;
                 max-height: 60px;
             }
         }
