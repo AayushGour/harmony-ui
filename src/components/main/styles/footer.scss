@@ -1,8 +1,8 @@
 @import "../../../theme.scss";
 .footer {
     width: 100%;
-    transition: height 0.3s !important;
-    -webkit-transition: height 0.3s !important;
+    transition: all 0.3s !important;
+    -webkit-transition: all 0.3s !important;
     border-top: 1px solid $darkThemeBorder;
     .toggle-footer {
         position: absolute;

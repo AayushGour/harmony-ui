@@ -135,7 +135,7 @@
         }
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     .yt-list-container {
         .yt-list-item {
             .item-title-container .title,
@@ -167,6 +167,7 @@
         .yt-list-item {
             .list-item-content {
                 column-gap: 5px;
+                max-width: 65%;
             }
             .drag-indicator {
                 font-size: 1.3rem;

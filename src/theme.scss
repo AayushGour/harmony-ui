@@ -248,6 +248,24 @@ $tertiaryColor: #0000ff;
                     );
                 }
             }
+
+            //Footer
+            .footer {
+                &.closed {
+                    @include theme(
+                        $theme,
+                        $lightBackground: $lightThemeBackground,
+                        $darkBackground: $darkThemeBackground
+                    );
+                }
+                &.open {
+                    @include theme(
+                        $theme,
+                        $lightBackground: $lightThemeBackground,
+                        $darkBackground: $lightThemeFontColor
+                    );
+                }
+            }
         }
     }
 }

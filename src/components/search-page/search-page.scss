@@ -75,3 +75,43 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .search-page-container {
+        .search-result-content {
+            gap: 10px;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .search-page-container {
+        .search-result-content {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            gap: 0px;
+            .shelf-card,
+            .channel-card {
+                display: none !important;
+            }
+            .yt-list-card {
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .search-page-container {
+        .search-result-content {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            gap: 0px;
+            .shelf-card,
+            .channel-card {
+                display: none !important;
+            }
+            .yt-list-card {
+                width: 100%;
+            }
+        }
+    }
+}
