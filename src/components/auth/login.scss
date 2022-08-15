@@ -156,3 +156,17 @@
         padding: 15px !important;
     }
 }
+
+@media screen and (max-height: 600px) and (max-width: 425px) {
+    .login-card {
+        .left-panel {
+            .logo-container {
+                display: none !important;
+                .harmony-logo {
+                    height: 50px;
+                    width: 50px;
+                }
+            }
+        }
+    }
+}

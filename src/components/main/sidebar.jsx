@@ -37,7 +37,7 @@ const Sidebar = (props) => {
                 let listElement;
                 switch (elem?.type) {
                     case "nav-link":
-                        listElement = <Link title={`${elem?.title}`} to={elem?.route} className={`nav-list-item ${location?.pathname === elem?.route ? "selected" : ""}`} key={elem?.id} >
+                        listElement = <Link key={elem?.title + index} title={`${elem?.title}`} to={elem?.route} className={`nav-list-item ${location?.pathname === elem?.route ? "selected" : ""}`} key={elem?.id} >
                             {elem?.icon}
                             <span className='nav-list-title'>
                                 {elem?.title}
@@ -45,7 +45,7 @@ const Sidebar = (props) => {
                         </Link>
                         break;
                     case "switch":
-                        listElement = <SwitchElement element={elem} onSwitchClick={props.toggleTheme} value={props.theme} onValue="dark" offValue="light" />
+                        listElement = <SwitchElement key={elem?.title + index} element={elem} onSwitchClick={props.toggleTheme} value={props.theme} onValue="dark" offValue="light" />
                 }
 
                 return <Tooltip title={props?.isSidebarCollapsed ? elem?.title : ""} placement="right">

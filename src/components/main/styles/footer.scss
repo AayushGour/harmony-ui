@@ -12,7 +12,20 @@
             font-size: 2rem;
         }
     }
+    .controller-panel {
+        .btn-panel {
+            grid-area: btn-panel;
+        }
+        .progress-panel {
+            grid-area: progress-panel;
+        }
+    }
     &.closed {
+        .controller-panel {
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+        }
         position: relative;
         height: 60px !important;
     }
@@ -24,5 +37,9 @@
         right: 0px;
         // top: 0px;
         transform-origin: 100% 50%;
+        .controller-panel {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 3fr;
+        }
     }
 }
