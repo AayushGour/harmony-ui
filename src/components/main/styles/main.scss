@@ -18,6 +18,12 @@
             width: 100%;
             flex: 1;
             height: calc((100% - 100px)) !important;
+            .floating-action-button-container {
+                background-color: transparent !important;
+                .MuiSpeedDial-actions {
+                    background-color: inherit !important;
+                }
+            }
         }
     }
 }

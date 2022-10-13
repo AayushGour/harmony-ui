@@ -1,6 +1,9 @@
 import React from 'react';
-import { DarkMode, LightMode, PlaylistPlay } from "@mui/icons-material";
+import { DarkMode, LightMode, PlaylistAdd, PlaylistPlay } from "@mui/icons-material";
 import { store } from "../components/store/store";
+
+
+
 export const sidebarMenuItems = [
     // {
     //     id: 1,
@@ -282,3 +285,13 @@ export const Charts = {
     TRIPLE_A: "triple-a",
     HOT_MAINSTREAM_ROCK_TRACKS: "hot-mainstream-rock-tracks"
 }
+
+export const actionButtonActionNames={
+    CREATE_PLAYLIST: "Create Playlist",
+    EDIT_PLAYLIST: "Edit Playlist",
+    DELETE_PLAYLIST: "Delete Playlist"
+}
+
+export const actionButtonActions=[
+    {name: actionButtonActionNames?.CREATE_PLAYLIST, icon: <PlaylistAdd /> }
+]

@@ -112,6 +112,7 @@
     }
 }
 .switch-element-switch {
+    box-shadow: none !important;
     .ant-switch-handle {
         border-radius: 50%;
         &::before {

@@ -20,7 +20,7 @@ const Sidebar = (props) => {
                 if (item?.type === "divider") {
                     return <div className='sidebar-divider' key={item?.id}></div>
                 } else {
-                    return <Tooltip title={props?.isSidebarCollapsed ? item?.title : ""} placement="right">
+                    return <Tooltip title={props?.isSidebarCollapsed ? item?.title : ""} placement="right"  key={item?.id || index}>
                         <Link title={`${item?.title}`} to={item?.route} className={`nav-list-item ${location?.pathname === item?.route ? "selected" : ""}`} key={item?.id} >
                             {item?.icon}
                             <span className='nav-list-title'>
@@ -48,7 +48,7 @@ const Sidebar = (props) => {
                         listElement = <SwitchElement key={elem?.title + index} element={elem} onSwitchClick={props.toggleTheme} value={props.theme} onValue="dark" offValue="light" />
                 }
 
-                return <Tooltip title={props?.isSidebarCollapsed ? elem?.title : ""} placement="right">
+                return <Tooltip key={elem?.title + "tooltip" + index} title={props?.isSidebarCollapsed ? elem?.title : ""} placement="right">
                     {listElement}
                 </Tooltip>
             })}
